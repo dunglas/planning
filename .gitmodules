@@ -1,0 +1,18 @@
+[submodule "src/vendor/Symfony"]
+	path = src/vendor/Symfony
+	url = git://github.com/symfony/symfony.git
+[submodule "src/vendor/Zend"]
+	path = src/vendor/Zend
+	url = git://github.com/zendframework/zf2.git
+[submodule "src/Bundle/GravatarBundle"]
+	path = src/Bundle/GravatarBundle
+	url = git://github.com/ornicar/GravatarBundle.git
+[submodule "src/Bundle/DoctrineUserBundle"]
+        path = src/Bundle/DoctrineUserBundle
+        url = http://github.com/knplabs/DoctrineUserBundle.git
+[submodule "src/vendor/Doctrine"]
+	path = src/vendor/Doctrine
+	url = git://github.com/doctrine/doctrine2.git
+[submodule "src/vendor/DoctrineMigrations"]
+	path = src/vendor/DoctrineMigrations
+	url = git://github.com/doctrine/migrations.git

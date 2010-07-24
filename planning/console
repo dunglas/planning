@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/PlanningKernel.php';
+
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+
+$kernel = new PlanningKernel('dev', true);
+
+$application = new Application($kernel);
+$application->run();

@@ -1,0 +1,9 @@
+/planning/config/config*_local.yml
+/planning/cache/*
+/planning/logs/*
+
+# external software files
+.DS_Store
+tags
+*.autosave
+*.dia~

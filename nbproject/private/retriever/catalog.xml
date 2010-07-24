@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://www.symfony-project.org/schema/dic/services/services-1.0.xsd" uri="www.symfony-project.org/schema/dic/services/services-1.0.xsd"/>
+    <system systemId="http://www.symfony-project.org/schema/dic/doctrine/doctrine-1.0.xsd" uri="www.symfony-project.org/schema/dic/doctrine/doctrine-1.0.xsd"/>
+    <system systemId="http://www.symfony-project.org/schema/dic/symfony/symfony-1.0.xsd" uri="www.symfony-project.org/schema/dic/symfony/symfony-1.0.xsd"/>
+    <system systemId="http://www.symfony-project.org/schema/dic/swiftmailer/swiftmailer-1.0.xsd" uri="www.symfony-project.org/schema/dic/swiftmailer/swiftmailer-1.0.xsd"/>
+</catalog>
+
+
