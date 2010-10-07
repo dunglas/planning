@@ -1,10 +1,7 @@
 <?php
-
 namespace Application\PlanningBundle;
 
-use Symfony\Framework\Bundle\Bundle;
-use Symfony\Components\DependencyInjection\ContainerInterface;
-use Symfony\Components\DependencyInjection\ParameterBag\ParameterBagInterface;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class PlanningBundle extends Bundle
 {

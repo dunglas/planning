@@ -3,8 +3,7 @@
 <container xmlns="http://www.symfony-project.org/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:zend="http://www.symfony-project.org/schema/dic/zend"
-    xmlns:web="http://www.symfony-project.org/schema/dic/symfony"
-    xmlns:kernel="http://www.symfony-project.org/schema/dic/symfony/kernel"
+    xmlns:app="http://www.symfony-project.org/schema/dic/symfony"
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd
                         http://www.symfony-project.org/schema/dic/zend http://www.symfony-project.org/schema/dic/zend/zend-1.0.xsd">
 
@@ -12,13 +11,16 @@
         <import resource="config_dev.xml" />
     </imports>
 
-    <web:config
+    <webprofiler:config
         toolbar="false"
+        intercept-redirects="false"
     />
 
-    <zend:logger
-        priority="info"
-    />
+    <app:config error_handler="false">
+        <app:test />
+    </app:config>
 
-    <kernel:test />
+    <zend:config>
+        <zend:logger priority="debug" />
+    </zend:config>
 </container>
