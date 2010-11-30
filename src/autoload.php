@@ -1,6 +1,7 @@
 <?php
 
 $vendorDir = __DIR__.'/vendor';
+$symfonyVendorDir = $vendorDir . '/Symfony/vendor';
 
 require_once $vendorDir.'/symfony/src/Symfony/Component/HttpFoundation/UniversalClassLoader.php';
 
@@ -8,19 +9,19 @@ use Symfony\Component\HttpFoundation\UniversalClassLoader;
 
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
-    'Symfony'                        => $vendorDir.'/symfony/src',
+    'Symfony'                        => $vendorDir.'/Symfony/src',
     'Application'                    => __DIR__,
     'Bundle'                         => __DIR__,
-    'Doctrine\\Common\\DataFixtures' => $vendorDir.'/doctrine-data-fixtures/lib',
-    'Doctrine\\Common'               => $vendorDir.'/doctrine-common/lib',
-    'Doctrine\\DBAL\\Migrations'     => $vendorDir.'/doctrine-migrations/lib',
-    'Doctrine\\ODM\\MongoDB'         => $vendorDir.'/doctrine-mongodb/lib',
-    'Doctrine\\DBAL'                 => $vendorDir.'/doctrine-dbal/lib',
-    'Doctrine'                       => $vendorDir.'/doctrine/lib',
-    'Zend'                           => $vendorDir.'/zend/library',
+    'Doctrine\\Common\\DataFixtures' => $symfonyVendorDir.'/doctrine-data-fixtures/lib',
+    'Doctrine\\Common'               => $symfonyVendorDir.'/doctrine-common/lib',
+    'Doctrine\\DBAL\\Migrations'     => $symfonyVendorDir.'/doctrine-migrations/lib',
+    'Doctrine\\ODM\\MongoDB'         => $symfonyVendorDir.'/doctrine-mongodb/lib',
+    'Doctrine\\DBAL'                 => $symfonyVendorDir.'/doctrine-dbal/lib',
+    'Doctrine'                       => $symfonyVendorDir.'/doctrine/lib',
+    'Zend'                           => $symfonyVendorDir.'/zend/library',
 ));
 $loader->registerPrefixes(array(
-    'Swift_' => $vendorDir.'/swiftmailer/lib/classes',
-    'Twig_'  => $vendorDir.'/twig/lib',
+    'Swift_' => $symfonyVendorDir.'/swiftmailer/lib/classes',
+    'Twig_'  => $symfonyVendorDir.'/twig/lib',
 ));
 $loader->register();

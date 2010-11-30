@@ -1,9 +1,9 @@
-[submodule "src/vendor/mongodb-odm"]
-	path = src/vendor/mongodb-odm
-	url = git://github.com/doctrine/mongodb-odm
 [submodule "src/Bundle/DoctrineUserBundle"]
 	path = src/Bundle/DoctrineUserBundle
 	url = git://github.com/knplabs/DoctrineUserBundle.git
 [submodule "src/Bundle/TimeBundle"]
 	path = src/Bundle/TimeBundle
 	url = git://github.com/knplabs/TimeBundle.git
+[submodule "src/vendor/Symfony"]
+	path = src/vendor/Symfony
+	url = git@github.com:dunglas/symfony.git
