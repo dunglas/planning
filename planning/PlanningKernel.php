@@ -15,7 +15,7 @@ class PlanningKernel extends Kernel {
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
 
             // enable third-party bundles
-            //new Symfony\Bundle\ZendBundle\ZendBundle(),
+            new Symfony\Bundle\ZendBundle\ZendBundle(),
             //new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             //new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             //new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
@@ -23,12 +23,14 @@ class PlanningKernel extends Kernel {
             //new Symfony\Bundle\PropelBundle\PropelBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
 
+            new Bundle\DoctrineUserBundle\DoctrineUserBundle(),
+
             // register your bundles
             new Application\PlanningBundle\PlanningBundle(),
     );
 
     if ($this->isDebug()) {
-      $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
+        $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
     }
 
     return $bundles;
