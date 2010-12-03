@@ -1,6 +1,7 @@
-/planning/config/config*_local.yml
-/planning/cache/*
-/planning/logs/*
+planning/config/config*_local.yml
+planning/cache/*
+planning/logs/*
+web/bundles
 
 # external software files
 .DS_Store
