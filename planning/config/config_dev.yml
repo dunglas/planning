@@ -1,0 +1,34 @@
+imports:
+    - { resource: config.yml }
+
+# load the profiler
+app.config:
+    router:   { resource: "%kernel.root_dir%/config/routing_dev.yml" }
+    profiler: { only_exceptions: false }
+
+# enable the web profiler
+webprofiler.config:
+    toolbar: true
+    intercept_redirects: true
+
+#doctrine_odm.mongodb:
+#    logger_class: Symfony\Bundle\DoctrineMongoDBBundle\Logger\DoctrineMongoDBLogger
+
+zend.config:
+    logger:
+        priority: debug
+        path:     %kernel.logs_dir%/%kernel.environment%.log
+
+#twig.config:
+#    auto_reload: true
+
+#doctrine_odm.mongodb:
+#    metadata_cache_driver: array
+#    cache_driver: array
+#    default_database: planning_dev
+#    connections:
+#        default:
+#            server: mongodb://localhost:27017
+#            options:
+#                connect: true
+#                persistent: planning

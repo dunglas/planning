@@ -1,0 +1,10 @@
+planning:
+    resource: PlanningBundle/Resources/config/routing.xml
+
+session:
+    resource: DoctrineUserBundle/Resources/config/routing/session.xml
+    prefix:   /session
+
+user:
+    resource: DoctrineUserBundle/Resources/config/routing/user.xml
+    prefix:   /user

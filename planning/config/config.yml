@@ -1,0 +1,35 @@
+app.config:
+    charset:             UTF-8
+    error_handler:       null
+    validation:          { enabled: true, annotations: true }
+    router:              { resource: "%kernel.root_dir%/config/routing.yml" }
+    user:
+        lifetime:        2592000 # one month
+    templating:
+        escaping:        htmlspecialchars
+        assets_version:  74
+    translator:           { fallback: en }
+
+#zend.config:
+#    logger:
+#        priority: notice
+#        path:     %kernel.logs_dir%/%kernel.environment%.log
+
+twig.config: ~
+doctrine_odm.mongodb:
+    server: mongodb://localhost:27017
+    default_database: planning_%kernel.environment%
+    options:
+        connect: true
+    metadata_cache_driver: array
+
+
+#time.helper: ~
+
+doctrine_user.config:
+    db_driver: odm
+    class:
+        model:
+            user: Application\PlanningBundle\Document\User
+        form:
+            user: Application\PlanningBundle\Form\UserForm
