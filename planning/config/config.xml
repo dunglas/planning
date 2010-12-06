@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:app="http://www.symfony-project.org/schema/dic/symfony"
+    xmlns:doctrine="http://www.symfony-project.org/schema/dic/doctrine/odm/mongodb"
+    xmlns:twig="http://www.symfony-project.org/schema/dic/twig"
+    xmlns:swift="http://www.symfony-project.org/schema/dic/swiftmailer"
+    xmlns:zend="http://www.symfony-project.org/schema/dic/zend"
+    xmlns:doctrine_user="http://www.symfony-project.org/schema/dic/doctrine_user"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd
+                        http://www.symfony-project.org/schema/dic/zend http://www.symfony-project.org/schema/dic/zend/zend-1.0.xsd
+                        http://www.symfony-project.org/schema/dic/twig http://www.symfony-project.org/schema/dic/twig/twig-1.0.xsd
+                        http://www.symfony-project.org/schema/dic/swiftmailer http://www.symfony-project.org/schema/dic/swiftmailer/swiftmailer-1.0.xsd
+                        http://www.symfony-project.org/schema/dic/doctrine/odm/mongodb http://www.symfony-project.org/schema/dic/doctrine/odm/mongodb/mongodb-1.0.xsd">
+    <!-- Invalid schema
+                            http://www.symfony-project.org/schema/dic/symfony http://www.symfony-project.org/schema/dic/symfony/symfony-1.0.xsd
+    -->
+
+    <app:config csrf-secret="change-me" charset="UTF-8" error-handler="null">
+        <app:router resource="%kernel.root_dir%/config/routing.xml" />
+        <app:validation enabled="true" annotations="true" />
+        <app:templating assets_version="SomeVersionScheme" />
+        <app:session default-locale="en" lifetime="3600" auto-start="true" />
+    </app:config>
+
+    <!-- Twig Configuration -->
+    <twig:config debug="%kernel.debug%" strict-variables="%kernel.debug%" />
+
+    <doctrine_user:config db_driver="odm">
+        <doctrine_user:class>
+            <doctrine_user:model>
+                <doctrine_user:user>Application\PlanningBundle\Document\User</doctrine_user:user>
+            </doctrine_user:model>
+            <doctrine_user:form>
+                <doctrine_user:user>Application\PlanningBundle\Form\UserForm</doctrine_user:user>
+            </doctrine_user:form>
+        </doctrine_user:class>
+    </doctrine_user:config>
+    
+    
+    <doctrine:mongodb server="mongodb://localhost:27017"
+                      default_database="planning_%kernel.environment%">
+        <metadata_cache_driver type="array">
+        </metadata_cache_driver>
+        <options>
+            <connect>true</connect>
+        </options>
+    </doctrine:mongodb>
+
+    <!-- Swiftmailer Configuration -->
+    <!--
+    <swiftmailer:config
+        transport="smtp"
+        encryption="ssl"
+        auth_mode="login"
+        host="smtp.gmail.com"
+        username="xxxxxxxx"
+        password="xxxxxxxx" />
+    -->
+</container>
+    

@@ -1,0 +1,34 @@
+{% extends "PlanningBundle::layout.twig" %}
+
+{% block content %}
+
+{% trans %}
+Planning is an application dedicated to manage timetables of your organization.
+
+{% endtrans %}
+
+{% trans "Login or" %} <a href="{% path "doctrine_user_user_create" %}">{% trans "create an account" %}</a>!
+
+<form action="{% path "doctrine_user_session_create" %}" {{ form|render_enctype }} method="POST" class="user_session_new">
+    {{ form|render_errors }}
+    {{ form|render_hidden }}
+
+    <dl>
+        <dt>{{ form.usernameOrEmail|render_label('Username or email') }}</dt>
+        <dd>
+            {{ form.usernameOrEmail|render_errors }}
+            {{ form.usernameOrEmail|render }}
+        </dd>
+        
+        <dt>{{ form.password|render_label }}</dt>
+        <dd>
+            {{ form.password|render_errors }}
+            {{ form.password|render }}
+        </dd>
+    </dl>
+
+    {{ form.rememberMe|render }} {{ form.rememberMe|render_label('Remember me') }}
+
+    <input type="submit" value="{% trans "Login" from "PlanningBundle" %}" />
+</form>
+{% endblock %}

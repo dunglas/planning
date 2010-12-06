@@ -3,6 +3,7 @@
 namespace Application\PlanningBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 use Application\PlanningBundle\Document;
 use Application\PlanningBundle\Form;
 
@@ -10,18 +11,19 @@ class PlanningController extends Controller
 {
     public function indexAction()
     {
-        /*$test = new Document\Test();
-        $test->setName($name);
+        if (!$this->get('doctrine_user.auth')->isAuthenticated()) {
+            return $this->forward('DoctrineUserBundle:Session:new');
+        }
 
-        $dm = $this->get('doctrine.odm.mongodb.document_manager');
-        $dm->persist($test);
-        $dm->flush();*/
-
-        $test = new Document\User();
-
-        $form = new Form\UserForm('test', $test, $this->get('validator'));
+        return $this->render('PlanningBundle:Planning:index.twig');
+    }
+    
+    public function testAction() {
+        $test = new Document\SpecialTest();
+        
+        $form = new Form\SpecialTestForm('test', $test, $this->get('validator'));
         $form->configure();
-
+        
         if ('POST' === $this->get('request')->getMethod()) {
             $form->bind($this->get('request')->request->get('test'));
 
@@ -29,8 +31,7 @@ class PlanningController extends Controller
                 //$test->process();
             }
         }
-
-
-        return $this->render('PlanningBundle:Planning:index.twig', array('form' => $form));
-    }
+        
+        return $this->render('PlanningBundle:Planning:test.twig', array('form' => $form));
+    }    
 }

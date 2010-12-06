@@ -22,13 +22,11 @@ use Bundle\DoctrineUserBundle\Document\User as BaseUser;
 class User extends BaseUser {
   /**
    * @mongodb:String
-   * @validation:NotBlank
    */
   protected $givenName;
 
   /**
    * @mongodb:String
-   * @validation:NotBlank
    */
   protected $surname;
 
