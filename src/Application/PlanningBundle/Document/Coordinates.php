@@ -11,14 +11,14 @@ namespace Application\PlanningBundle\Document;
 /**
  * Coordinates.
  *
- * @EmbeddedDocument
+ * @mongodb:EmbeddedDocument
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
 class Coordinates
 {
-    /** @Float */
+    /** @mongodb:Float */
     public $latitude;
 
-    /** @Float */
+    /** @mongodb:Float */
     public $longitude;
 }

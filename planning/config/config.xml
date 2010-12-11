@@ -24,8 +24,12 @@
         <app:session default-locale="en" lifetime="3600" auto-start="true" />
     </app:config>
 
-    <!-- Twig Configuration -->
-    <twig:config debug="%kernel.debug%" strict-variables="%kernel.debug%" />
+    <twig:config debug="%kernel.debug%" strict-variables="%kernel.debug%">
+        <twig:form>
+            <twig:resource>HTML5FormBundle::form.twig</twig:resource>
+        </twig:form>
+    </twig:config>
+
 
     <doctrine_user:config db_driver="odm">
         <doctrine_user:class>
@@ -34,6 +38,7 @@
             </doctrine_user:model>
             <doctrine_user:form>
                 <doctrine_user:user>Application\PlanningBundle\Form\UserForm</doctrine_user:user>
+                <doctrine_user:session>Application\PlanningBundle\Form\SessionForm</doctrine_user:session>
             </doctrine_user:form>
         </doctrine_user:class>
     </doctrine_user:config>

@@ -1,7 +1,7 @@
 {% extends "PlanningBundle::layout.twig" %}
 
 {% block content %}
-    <form action="{% path 'test' %}" method="post">
+    <form action="{% path 'organization_create' %}" method="post">
         {{ form|render }}
 
         <input type="submit" />

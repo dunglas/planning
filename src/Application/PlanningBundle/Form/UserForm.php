@@ -19,12 +19,7 @@ class UserForm extends BaseUserForm {
     public function configure()
     {
         parent::configure();
-
-        $this->add(new TextField('givenName'));
-        $this->add(new TextField('surname'));
-
-        $addressGroup = new AddressFieldGroup('address');
-        $addressGroup->configure();
-        $this->add($addressGroup);
+        
+        $this->remove('username');
     }
 }

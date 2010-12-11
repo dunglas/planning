@@ -1,0 +1,68 @@
+{% block input %}
+    <input type="{{ type }}" {% display field_attributes %} value="{{ field.displayedData }}" />
+{% endblock %}
+
+{% block email_field %}
+    {% set type = 'email' %}
+    {% display input %}
+{% endblock email_field %}
+
+{% block number_field %}
+    {% set type = 'number' %}
+    {% display input %}
+{% endblock number_field %}
+
+{% block search_field %}
+    {% set type = 'search' %}
+    {% display input %}
+{% endblock search_field %}
+
+{% block tel_field %}
+    {% set type = 'tel' %}
+    {% display input %}
+{% endblock tel_field %}
+
+{% block url_field %}
+    {% set type = 'url' %}
+    {% display input %}
+{% endblock url_field %}
+
+{% block datetime_field %}
+    {% set type = 'datetime' %}
+    {% display input %}
+{% endblock datetime_field %}
+
+{% block date_field %}
+    {% set type = 'date' %}
+    {% display input %}
+{% endblock date_field %}
+
+{% block month_field %}
+    {% set type = 'month' %}
+    {% display input %}
+{% endblock month_field %}
+
+{% block week_field %}
+    {% set type = 'week' %}
+    {% display input %}
+{% endblock week_field %}
+
+{% block time_field %}
+    {% set type = 'time' %}
+    {% display input %}
+{% endblock time_field %}
+
+{% block datetime_local_field %}
+    {% set type = 'datetime-local' %}
+    {% display input %}
+{% endblock datetime_local_field %}
+
+{% block range_field %}
+    {% set type = 'range' %}
+    {% display input %}
+{% endblock range_field %}
+
+{% block color_field %}
+    {% set type = 'color' %}
+    {% display input %}
+{% endblock color_field %}

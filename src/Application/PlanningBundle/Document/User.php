@@ -59,4 +59,17 @@ class User extends BaseUser {
   public function setAddress($address) {
       $this->address = $address;
   }
+  
+  /**
+   * Sets the email address and the user name.
+   * 
+   * The username is the email address of the user.
+   * 
+   * @param type $email 
+   */
+  public function setEmail($email) {
+      parent::setEmail($email);
+      
+      $this->setUsername($email);
+  }
 }

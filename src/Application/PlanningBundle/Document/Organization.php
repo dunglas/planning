@@ -14,22 +14,71 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Organization.
  *
- * @Document
+ * @mongodb:Document
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
 class Organization {
-  /** @Id */
+  /** @mongodb:Id */
   protected $id;
 
-  /** @String */
+  /** @mongodb:String */
   protected $name;
 
-  /** @EmbedOne(targetDocument="Address") */
+  /** @mongodb:EmbedOne(targetDocument="Address") */
   protected $address;
 
-  /** @ReferenceMany(targetDocument="Calendar") */
+  /** @mongodb:ReferenceMany(targetDocument="Calendar") */
   protected $calendars = array ();
 
-  /** @ReferenceMany(targetDocument="Group") */
+  /** @mongodb:ReferenceMany(targetDocument="Bundle\DoctrineUserBundle\Document\Group") */
   protected $groups = array ();
+  
+  public function getId()   {
+      return $this->id;
+  }
+
+  public function setId($id)
+  {
+      $this->id = $id;
+  }
+
+  public function getName()
+  {
+      return $this->name;
+  }
+
+  public function setName($name)
+  {
+      $this->name = $name;
+  }
+
+  public function getAddress()
+  {
+      return $this->address;
+  }
+
+  public function setAddress($address)
+  {
+      $this->address = $address;
+  }
+
+  public function getCalendars()
+  {
+      return $this->calendars;
+  }
+
+  public function setCalendars($calendars)
+  {
+      $this->calendars = $calendars;
+  }
+
+  public function getGroups()
+  {
+      return $this->groups;
+  }
+
+  public function setGroups($groups)
+  {
+      $this->groups = $groups;
+  }
 }
